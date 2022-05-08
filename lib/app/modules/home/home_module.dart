@@ -4,6 +4,7 @@ import 'package:offers_website/app/modules/home/category/add_category/add_catego
 import 'package:offers_website/app/modules/home/category/show_category/category_binding.dart';
 import 'package:offers_website/app/modules/home/category/show_category/category_view.dart';
 import 'package:offers_website/app/modules/home/dash_board/home_binding.dart';
+import 'package:offers_website/app/modules/home/dash_board/home_screen.dart';
 import 'package:offers_website/app/modules/home/dash_board/home_view.dart';
 import 'package:offers_website/app/modules/home/districts/districts_binding.dart';
 import 'package:offers_website/app/modules/home/districts/districts_view.dart';

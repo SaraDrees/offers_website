@@ -11,10 +11,16 @@ class RequestInterceptor extends Interceptor {
   void onRequest(
       RequestOptions options, RequestInterceptorHandler handler) async {
     log("Hi RequestInterceptor");
-
+    options.headers["Access-Control-Allow-Origin"] = '*';
+    options.headers['Access-Control-Allow-Credentials'] = true;
+    options.headers['Access-Control-Allow-Headers'] =
+        "Origin,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,locale";
+    options.headers['Access-Control-Allow-Methods'] = '*';
     await dioController
         .checkToken(url: options.path, method: options.method)
-        .then((value) => options.headers['Authorization'] = 'Bearer $value');
+        .then((value) {
+      // options.headers['Authorization'] = 'Bearer $value';
+    });
     log(
       '---------------------------------------------------------------------------------------------"\n#Start Request#\n@path:${options.uri}\n@headers:${options.headers}\n@data:${options.data}\n@queryParameters:${options.queryParameters}\n#End Request#\n"---------------------------------------------------------------------------------------------',
     );

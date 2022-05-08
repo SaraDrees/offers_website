@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:offers_website/app/modules/home/dash_board/home_controller.dart';
 import 'package:offers_website/core/services/size_configration.dart';
+import 'package:offers_website/core/widgets/app_bar/app_bar.dart';
+import 'package:offers_website/core/widgets/widget_state.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
@@ -12,330 +14,528 @@ class HomeView extends GetView<HomeController> {
     return Directionality(
       textDirection: TextDirection.ltr,
       child: ScreenSizer(builder: (customSize) {
-        return GetBuilder<HomeController>(
-            init: controller,
-            builder: (_) {
-              return _buildDashBordHome(customSize);
-              // return NavigationView(
-              //   appBar: const NavigationAppBar(
-              //     title: Center(
-              //         child: Text(
-              //       "الصفحة الرئيسية",
-              //       style: TextStyle(
-              //         fontSize: 20,
-              //       ),
-              //     )),
-              //   ),
-              //   pane: NavigationPane(
-              //       selected: controller.selectedIndex.toInt(),
-              //       size: NavigationPaneSize(
-              //           compactWidth: customSize.setWidth(50)),
-              //       onChanged: (i) {
-              //         // controller.changeselectedIndex(i);
-              //         // if (i == 2) {
-              //         //   Get.toNamed(OfferRoutes.allCategoryRoute);
-              //         // }
-              //         controller.updateSelectedIndex(i);
-              //         // controller.selectedIndex.value = i;
-              //         // controller.update();
-              //         log("i === $i &&& ${controller.selectedIndex}");
-              //       },
-              //       displayMode: PaneDisplayMode.compact,
-              //       items: [
-              //         PaneItem(
-              //             icon: Column(
-              //               children: const [
-              //                 Icon(FluentIcons.home),
-              //                 Text("Dashboard")
-              //               ],
-              //             ),
-              //             title: const Text("Dashboard")),
-              //         PaneItem(
-              //             icon: Column(
-              //               children: const [
-              //                 Icon(FluentIcons.group),
-              //                 Text("Identity")
-              //               ],
-              //             ),
-              //             title: const Text("Identity")),
-              //         PaneItem(
-              //             icon: Column(
-              //               children: const [
-              //                 Icon(FluentIcons.category_classification),
-              //                 Text("Category")
-              //               ],
-              //             ),
-              //             title: const Text("Category")),
-              //         PaneItem(
-              //             icon: Column(
-              //               children: const [
-              //                 Icon(FluentIcons.map_directions),
-              //                 Text("Districts")
-              //               ],
-              //             ),
-              //             title: const Text("Districts")),
-              //         PaneItem(
-              //             icon: Column(
-              //               children: const [
-              //                 Icon(FluentIcons.shop),
-              //                 Text("Shops")
-              //               ],
-              //             ),
-              //             title: const Text("Shops")),
-              //         PaneItem(
-              //             icon: Column(
-              //               children: const [
-              //                 Icon(FluentIcons.gift_box_solid),
-              //                 Text("Offers")
-              //               ],
-              //             ),
-              //             title: const Text("Offers")),
-              //       ]),
-              //   content: NavigationBody(
-              //       index: controller.selectedIndex.toInt(),
-              //       children: [
-              //         _buildDashboardBody(customSize, context),
-              //         const IdentityHomeView(),
-              //         // ShowUserView(),
-              //         const CategoryHome(),
-              //         const DistrictsView(),
-              //         const HomeShopView(),
-              //         const HomeOfferView()
-              //       ]),
-              // );
-            });
+        return Scaffold(
+            extendBodyBehindAppBar: true,
+            appBar: CustomAppBar(customSize: customSize),
+            body: SingleChildScrollView(
+                child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                  Stack(
+                    children: [
+                      SizedBox(
+                        height: customSize.screenHeight / 2 +
+                            customSize.screenHeight / 8,
+                        width: customSize.screenWidth,
+                        child:
+                            // Stack(
+                            //   children: [
+                            CarouselSlider(
+                                options: CarouselOptions(
+                                    viewportFraction: 1,
+                                    height: customSize.screenHeight / 2 +
+                                        customSize.screenHeight / 8,
+                                    autoPlay: true),
+                                items: List.generate(
+                                  controller.imageUrl.length,
+                                  (index) => SizedBox(
+                                    width: customSize.screenWidth,
+                                    child: Image.asset(
+                                      controller.imageUrl[index]['url'],
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                )),
+                      ),
+                      // GetBuilder<HomeController>(
+                      //     id: "floatingAppBarId",
+                      //     builder: (context) {
+                      //       return Visibility(
+                      //         visible: false,
+                      //         child: Center(
+                      //           heightFactor: 1,
+                      //           child: Padding(
+                      //               padding: EdgeInsets.only(
+                      //                 top: customSize.screenHeight / 2 +
+                      //                     customSize.screenHeight / 10,
+                      //                 left: customSize.screenWidth / 7,
+                      //                 right: customSize.screenWidth / 7,
+                      //               ),
+                      //               child: Card(
+                      //                 child: Padding(
+                      //                   padding: EdgeInsets.symmetric(
+                      //                       horizontal:
+                      //                           customSize.screenWidth / 50,
+                      //                       vertical:
+                      //                           customSize.screenHeight / 40),
+                      //                   child: Row(
+                      //                       mainAxisAlignment:
+                      //                           MainAxisAlignment.spaceAround,
+                      //                       children: List<Widget>.generate(
+                      //                           controller
+                      //                               .floatingAppBar.length,
+                      //                           (index) => buildonHoverText(
+                      //                               customSize,
+                      //                               index,
+                      //                               controller.floatingAppBar[
+                      //                                   index]))),
+                      //                 ),
+                      //               )
+                      //               // }),
+                      //               ),
+                      //         ),
+                      //       );
+                      //     })
+                    ],
+                  ),
+                  buildDashBordHome(customSize)
+                ])));
       }),
     );
   }
 
-  Widget _buildDashBordHome(CustomSize customSize) {
-    return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: PreferredSize(
-        preferredSize: Size(customSize.screenWidth, 1000),
-        child: GetBuilder<HomeController>(
-            id: "appBarId",
-            builder: (controller) {
-              return Container(
-                color: Colors.grey,
-                child: Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Row(
-                    children: [
-                      const Text(
-                        'OFFERS',
-                        style: TextStyle(fontSize: 20, color: Colors.white),
-                      ),
-                      Expanded(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            InkWell(
-                              onTap: () {},
+  Widget buildAppBar(
+    CustomSize customSize,
+  ) =>
+      GetBuilder<HomeController>(
+          id: "appBarId",
+          builder: (controller) {
+            return Container(
+              color: Colors.grey,
+              child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: Row(
+                  children: [
+                    const Text(
+                      'OFFERS',
+                      style: TextStyle(fontSize: 20, color: Colors.white),
+                    ),
+                    SizedBox(width: customSize.screenWidth / 30),
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          InkWell(
+                            onTap: () {
+                              controller.generateFloatingAppBar(0);
+                            },
+                            onHover: (i) {
+                              controller.showOnHoverSelectEffect(
+                                  0, i, "appBarId");
+                            },
+                            child: Text(
+                              'Home',
+                              style: TextStyle(
+                                color: controller.isHovering[0]
+                                    ? Colors.blue.shade200
+                                    : Colors.white,
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: customSize.screenWidth / 30),
+                          InkWell(
+                              onTap: () {
+                                controller.generateFloatingAppBar(1);
+                              },
                               onHover: (i) {
                                 controller.showOnHoverSelectEffect(
-                                    0, i, "appBarId");
+                                    1, i, "appBarId");
                               },
                               child: Text(
-                                'Discover',
+                                'Identity',
                                 style: TextStyle(
-                                  color: controller.isHovering[0]
+                                  color: controller.isHovering[1]
                                       ? Colors.blue.shade200
                                       : Colors.white,
                                 ),
-                              ),
-                            ),
-                            SizedBox(width: customSize.screenWidth / 20),
-                            InkWell(
-                                onTap: () {},
-                                onHover: (i) {
-                                  controller.showOnHoverSelectEffect(
-                                      1, i, "appBarId");
-                                },
-                                child: Text(
-                                  'Contact Us',
-                                  style: TextStyle(
-                                    color: controller.isHovering[1]
-                                        ? Colors.blue.shade200
-                                        : Colors.white,
-                                  ),
-                                )),
-                          ],
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () {},
-                        onHover: (i) {
-                          controller.showOnHoverSelectEffect(2, i, "appBarId");
-                        },
-                        child: Text(
-                          'Sign Up',
-                          style: TextStyle(
-                            color: controller.isHovering[2]
-                                ? Colors.blue.shade200
-                                : Colors.white,
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: customSize.screenWidth / 50,
-                      ),
-                      InkWell(
-                        onTap: () {},
-                        onHover: (i) {
-                          controller.showOnHoverSelectEffect(3, i, "appBarId");
-                        },
-                        child: Text(
-                          'Login',
-                          style: TextStyle(
-                            color: controller.isHovering[3]
-                                ? Colors.blue.shade200
-                                : Colors.white,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              );
-            }),
-      ),
-      body: Stack(
-        children: [
-          // ConstrainedBox(
-          //     constraints: BoxConstraints(
-          //         minWidth: customSize.screenWidth,
-          //         minHeight: customSize.screenHeight / 2 +
-          //             customSize.screenHeight / 8),
-          SizedBox(
-              height: customSize.screenHeight / 2 + customSize.screenHeight / 2,
-              width: customSize.screenWidth,
-              child: Stack(
-                children: [
-                  CarouselSlider(
-                      options: CarouselOptions(
-                          // autoPlayInterval: const Duration(seconds: 5),
-                          viewportFraction: 1,
-                          height: customSize.screenHeight / 2 +
-                              customSize.screenHeight / 8,
-                          autoPlay: true),
-                      items: List.generate(
-                        controller.imageUrl.length,
-                        (index) => SizedBox(
-                          width: customSize.screenWidth,
-                          child: Image.asset(
-                            controller.imageUrl[index],
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      )),
-                  Align(
-                    alignment: Alignment.bottomCenter,
-                    child: SizedBox(
-                      width: customSize.setWidth(100),
-                      child: CarouselSlider.builder(
-                        itemCount: controller.imageUrl.length,
-                        itemBuilder: (context, i, j) {
-                          return Container(
-                            width: 12.0,
-                            height: 12.0,
-                            margin: const EdgeInsets.symmetric(
-                                vertical: 8.0, horizontal: 4.0),
-                            decoration: const BoxDecoration(
-                                shape: BoxShape.circle, color: Colors.black
-                                // : Colors.black
-                                // (Theme.of(context).brightness == Brightness.dark
-                                //         ? Colors.white
-                                //         : Colors.black)
-                                // .withOpacity(0.4)
+                              )),
+                          SizedBox(width: customSize.screenWidth / 30),
+                          InkWell(
+                              onTap: () {
+                                controller.generateFloatingAppBar(2);
+                              },
+                              onHover: (i) {
+                                controller.showOnHoverSelectEffect(
+                                    2, i, "appBarId");
+                              },
+                              child: Text(
+                                'Districts',
+                                style: TextStyle(
+                                  color: controller.isHovering[2]
+                                      ? Colors.blue.shade200
+                                      : Colors.white,
                                 ),
-                          );
-                        },
-                        options: CarouselOptions(
-                            // autoPlayInterval: const Duration(seconds: 5),
-                            viewportFraction: 0.3,
-                            height: customSize.screenHeight / 2 +
-                                customSize.screenHeight / 15,
-                            autoPlay: true),
+                              )),
+                          SizedBox(width: customSize.screenWidth / 30),
+                          InkWell(
+                              onTap: () {
+                                controller.generateFloatingAppBar(3);
+                              },
+                              onHover: (i) {
+                                controller.showOnHoverSelectEffect(
+                                    3, i, "appBarId");
+                              },
+                              child: Text(
+                                'Categories',
+                                style: TextStyle(
+                                  color: controller.isHovering[3]
+                                      ? Colors.blue.shade200
+                                      : Colors.white,
+                                ),
+                              )),
+                          SizedBox(width: customSize.screenWidth / 30),
+                          InkWell(
+                              onTap: () {
+                                controller.generateFloatingAppBar(4);
+                              },
+                              onHover: (i) {
+                                controller.showOnHoverSelectEffect(
+                                    4, i, "appBarId");
+                              },
+                              child: Text(
+                                'Shops',
+                                style: TextStyle(
+                                  color: controller.isHovering[4]
+                                      ? Colors.blue.shade200
+                                      : Colors.white,
+                                ),
+                              )),
+                          SizedBox(width: customSize.screenWidth / 30),
+                          InkWell(
+                              onTap: () {
+                                controller.generateFloatingAppBar(5);
+                              },
+                              onHover: (i) {
+                                controller.showOnHoverSelectEffect(
+                                    5, i, "appBarId");
+                              },
+                              child: Text(
+                                'Offers',
+                                style: TextStyle(
+                                  color: controller.isHovering[5]
+                                      ? Colors.blue.shade200
+                                      : Colors.white,
+                                ),
+                              )),
+                          SizedBox(width: customSize.screenWidth / 30),
+                          InkWell(
+                              onTap: () {
+                                controller.generateFloatingAppBar(6);
+                              },
+                              onHover: (i) {
+                                controller.showOnHoverSelectEffect(
+                                    6, i, "appBarId");
+                              },
+                              child: Text(
+                                'Offer Types',
+                                style: TextStyle(
+                                  color: controller.isHovering[6]
+                                      ? Colors.blue.shade200
+                                      : Colors.white,
+                                ),
+                              )),
+                          SizedBox(width: customSize.screenWidth / 30),
+                          InkWell(
+                              onTap: () {
+                                controller.generateFloatingAppBar(7);
+                              },
+                              onHover: (i) {
+                                controller.showOnHoverSelectEffect(
+                                    7, i, "appBarId");
+                              },
+                              child: Text(
+                                'User Like/Fav',
+                                style: TextStyle(
+                                  color: controller.isHovering[7]
+                                      ? Colors.blue.shade200
+                                      : Colors.white,
+                                ),
+                              )),
+                          SizedBox(width: customSize.screenWidth / 30),
+                          InkWell(
+                              onTap: () {
+                                controller.generateFloatingAppBar(8);
+                              },
+                              onHover: (i) {
+                                controller.showOnHoverSelectEffect(
+                                    8, i, "appBarId");
+                              },
+                              child: Text(
+                                'Gender',
+                                style: TextStyle(
+                                  color: controller.isHovering[8]
+                                      ? Colors.blue.shade200
+                                      : Colors.white,
+                                ),
+                              )),
+                        ],
                       ),
                     ),
-                  )
-                ],
-              )),
-          Center(
-            heightFactor: 1,
-            child: Padding(
-              padding: EdgeInsets.only(
-                top: customSize.screenHeight / 2 + customSize.screenHeight / 30,
-                left: customSize.screenWidth / 5,
-                right: customSize.screenWidth / 5,
-              ),
-              child: GetBuilder<HomeController>(
-                  id: "floatingAppBarId",
-                  builder: (context) {
-                    return Card(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: customSize.screenWidth / 50,
-                            vertical: customSize.screenHeight / 40),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            buildonHoverText(customSize, 0, "Dashboard"),
-                            buildonHoverText(customSize, 1, "Identity"),
-                            buildonHoverText(customSize, 2, "Category"),
-                            buildonHoverText(customSize, 3, "Districts"),
-                            buildonHoverText(customSize, 4, "Shops"),
-                            buildonHoverText(customSize, 5, "Offers"),
-                            buildonHoverText(customSize, 6, "Offers Type"),
-                            buildonHoverText(customSize, 7, "User Like/Fav"),
-                            buildonHoverText(customSize, 8, "Gender"),
-                          ],
+                    SizedBox(
+                      width: customSize.screenWidth / 50,
+                    ),
+                    InkWell(
+                      onTap: () {},
+                      onHover: (i) {
+                        controller.showOnHoverSelectEffect(9, i, "appBarId");
+                      },
+                      child: Text(
+                        'LogOut',
+                        style: TextStyle(
+                          color: controller.isHovering[9]
+                              ? Colors.blue.shade200
+                              : Colors.white,
                         ),
                       ),
-                    );
-                  }),
-            ),
-          )
-        ],
-      ),
-    );
-  }
-
-  Widget buildonHoverText(CustomSize customSize, int index, String text) {
-    return InkWell(
-      onTap: () {},
-      onHover: (i) {
-        controller.hoverEffectInfloatingBar(index, i, "floatingAppBarId");
-      },
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(text,
-              style: controller.floatingBarisHovering[index]
-                  ? TextStyle(
-                      color: Colors.blue.shade600,
-                      // fontSize: 14,
-                      fontWeight: FontWeight.bold)
-                  : const TextStyle(color: Colors.black)
-              //  Colors.black,
+                    ),
+                  ],
+                ),
               ),
-          // ]),
-          SizedBox(height: customSize.setHeight(5)),
-          // For showing an underline on hover
-          Visibility(
-            maintainAnimation: true,
-            maintainState: true,
-            maintainSize: true,
-            visible: controller.floatingBarisHovering[index],
-            child: Container(
-              height: customSize.setHeight(2),
-              width: customSize.setWidth(20),
-              color: Colors.blue.shade400,
-            ),
-          )
+            );
+          });
+}
+
+Widget buildDashBordHome(CustomSize customSize) {
+  return Padding(
+      padding: EdgeInsets.symmetric(
+          horizontal: customSize.setWidth(5),
+          vertical: customSize.setHeight(20)),
+      child: Column(
+        children: [
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            // mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              const Text(
+                'Categories',
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              SizedBox(
+                width: customSize.setWidth(50),
+              ),
+              // Expanded(
+              //   child:
+              const Text(
+                'Categories with shop number',
+                textAlign: TextAlign.start,
+              ),
+              // ),
+            ],
+            // )
+          ),
+          //   ],
+          // ),
+          StateBuilder<HomeController>(
+              id: "categoryListId",
+              builder: (widgetState, controller) {
+                return Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: customSize.setWidth(2),
+                        vertical: customSize.setHeight(20)),
+                    child: SizedBox(
+                      height: customSize.screenHeight / 2.5,
+                      width: customSize.screenWidth,
+                      child: Scrollbar(
+                        controller: controller.horizontalScrollController,
+                        child: ListView.builder(
+                            controller: controller.horizontalScrollController,
+                            scrollDirection: Axis.horizontal,
+                            itemCount: controller.categories.length,
+                            itemBuilder: (_, index) => Container(
+                                  margin: EdgeInsets.symmetric(
+                                      horizontal: customSize.setWidth(2)),
+                                  height: customSize.screenHeight / 3,
+                                  width: customSize.screenWidth / 4,
+                                  child: Column(
+                                    children: [
+                                      SizedBox(
+                                        height: customSize.screenHeight / 4,
+                                        width: customSize.screenWidth / 3.8,
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(15.0),
+                                          child:
+                                              // Image.network(
+                                              //   controller
+                                              //       .categories[index].image,
+                                              Image.asset(
+                                            'assets/images/lock_screen.jpg',
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                          top: customSize.screenHeight / 100,
+                                        ),
+                                        child: Text(
+                                          controller.categories[index].name,
+                                          style: const TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                          top: customSize.screenHeight / 100,
+                                        ),
+                                        child: Text(
+                                          "shop number : ${controller.categories[index].shops?.length ?? 0}",
+                                          // controller.categories[index]
+                                          //         .isBranch
+                                          //     ? "bransh"
+                                          //     : "main",
+                                          style: const TextStyle(
+                                            color: Colors.grey,
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                )),
+                      ),
+                    ));
+              }),
+          // ),
+          buildFavoriteShopsRow(customSize)
+          // ,
+          // )
         ],
-      ),
-    );
-  }
+      ));
+}
+
+Widget buildFavoriteShopsRow(CustomSize customSize) {
+  return Padding(
+      padding: EdgeInsets.symmetric(
+          horizontal: customSize.setWidth(10),
+          vertical: customSize.setHeight(30)),
+      child: Column(
+        children: [
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            // mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              const Text(
+                'Favoraite Shops',
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              SizedBox(
+                width: customSize.setWidth(50),
+              ),
+              // Expanded(
+              //   child:
+              const Text(
+                'Favorite Shops and user number',
+                textAlign: TextAlign.start,
+              ),
+              // ),
+            ],
+            // )
+          ),
+          //   ],
+          // ),
+          StateBuilder<HomeController>(
+              id: "categoryListId",
+              builder: (widgetState, controller) {
+                return Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: customSize.setWidth(10),
+                        vertical: customSize.setHeight(20)),
+                    child: SizedBox(
+                      height: customSize.screenHeight / 2.5,
+                      width: customSize.screenWidth,
+                      child: Scrollbar(
+                          controller: controller.horizontalScrollController,
+                          child: ListView.builder(
+                            controller: controller.horizontalScrollController,
+                            scrollDirection: Axis.horizontal,
+                            itemCount: 10,
+                            itemBuilder: (_, index) => Container(
+                              margin: EdgeInsets.symmetric(
+                                  horizontal: customSize.setWidth(2)),
+                              height: customSize.screenHeight / 3,
+                              width: customSize.screenWidth / 4,
+                              child: Column(children: [
+                                SizedBox(
+                                    height: customSize.screenHeight / 4,
+                                    width: customSize.screenWidth / 4,
+                                    child: Stack(children: [
+                                      ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(25.0),
+                                        child:
+                                            // Image.network(
+                                            //   controller
+                                            //       .categories[index].image,
+                                            Image.asset(
+                                          'assets/images/lock_screen.jpg',
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                      // ),
+                                      // ),
+                                      Align(
+                                        alignment: Alignment.bottomRight,
+                                        child: Padding(
+                                            padding: EdgeInsets.only(
+                                              top:
+                                                  customSize.screenHeight / 100,
+                                            ),
+                                            child: Row(
+                                              // mainAxisSize: MainAxisSize.min,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              children: const [
+                                                Icon(Icons.group),
+                                                Text("user number : 10",
+                                                    style: TextStyle(
+                                                      color: Colors.grey,
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    )),
+                                              ],
+                                            )
+                                            //
+                                            ),
+                                      ),
+                                    ])),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                    top: customSize.screenHeight / 100,
+                                  ),
+                                  child: const Text(
+                                    "shop name",
+                                    // controller.categories[index].name,
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ),
+                              ]),
+
+                              // )
+                              //   ],
+                              // ),
+                            ),
+                            // )),
+                          )),
+                    ));
+              }),
+          // ),
+          // ,
+          // )
+        ],
+      ));
 }

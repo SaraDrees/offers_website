@@ -10,11 +10,15 @@ class _IdentityPages {
         binding: ShowUserBinding()),
     GetPage(
         name: IdentityRoutes.employeeRoute,
-        page: () => const ShowEmployeeView(),
+        page: () => ShowEmployeeView(),
         binding: ShowEmployeeBinding()),
     GetPage(
         name: IdentityRoutes.addEmployee,
         page: () => const AddEmployeeView(),
         binding: IdentityBinding()),
+    GetPage(
+        name: IdentityRoutes.identityHomeRoute,
+        page: () => const IdentityHomeView(),
+        binding: IdentityBinding())
   ];
 }

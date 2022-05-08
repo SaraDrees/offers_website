@@ -2,69 +2,78 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:offers_website/app/modules/home/identity/identity_home/identity_controller.dart';
 import 'package:offers_website/core/services/size_configration.dart';
+import 'package:offers_website/core/widgets/app_bar/app_bar.dart';
 
 class ShowEmployeeView extends GetView<IdentityController> {
-  const ShowEmployeeView({Key? key}) : super(key: key);
+  CustomSize? customSize;
+  ShowEmployeeView({this.customSize, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ScreenSizer(builder: (customSize) {
-      return const Directionality(
-          textDirection: TextDirection.ltr, child: Text("data"));
-    }
-        // child: ScaffoldPage(
-        //   content: Container(
-        //       margin: EdgeInsets.symmetric(
-        //           horizontal: customSize.setWidth(20),
-        //           vertical: customSize.setHeight(20)),
-        //       child: Column(
-        //           crossAxisAlignment: CrossAxisAlignment.start,
-        //           children: [
-        //             SizedBox(
-        //               width: customSize.screenWidth,
-        //               // margin: EdgeInsets.symmetric(
-        //               //     horizontal: customSize.setWidth(50)),
-        //               // alignment: Alignment.topCenter,
-        //               child: Text(
-        //                 "Employees",
-        //                 style: TextStyle(
-        //                     fontSize: 25,
-        //                     fontWeight: FontWeight.bold,
-        //                     color: Colors.blue),
-        //               ),
-        //             ),
-        //             SizedBox(
-        //               height: customSize.setHeight(50),
-        //             ),
-        //             SizedBox(
-        //               width: customSize.setWidth(70),
-        //               child: FilledButton(
-        //                   child: Padding(
-        //                     padding: EdgeInsets.symmetric(
-        //                         horizontal: customSize.setWidth(5),
-        //                         vertical: customSize.setHeight(10)),
-        //                     child: Row(
-        //                       // mainAxisAlignment:
-        //                       // MainAxisAlignment.spaceAround,
-        //                       children: [
-        //                         const Icon(FluentIcons.add),
-        //                         SizedBox(
-        //                           width: customSize.setWidth(5),
-        //                         ),
-        //                         const Text("add Employee"),
-        //                       ],
-        //                     ),
-        //                   ),
-        //                   onPressed: () {}),
-        //             ),
-        //             SizedBox(
-        //               height: customSize.setHeight(50),
-        //             ),
-        //             _buildEmployeesTable(customSize)
-        //           ])),
-        // ));
-        // }
-        );
+      return Directionality(
+          textDirection: TextDirection.ltr,
+          child: Scaffold(
+            appBar: CustomAppBar(customSize: customSize),
+            body: const Center(
+              child: Text("show Employee"),
+            ),
+          ));
+      // }
+      // child: ScaffoldPage(
+      //   content: Container(
+      //       margin: EdgeInsets.symmetric(
+      //           horizontal: customSize.setWidth(20),
+      //           vertical: customSize.setHeight(20)),
+      //       child: Column(
+      //           crossAxisAlignment: CrossAxisAlignment.start,
+      //           children: [
+      //             SizedBox(
+      //               width: customSize.screenWidth,
+      //               // margin: EdgeInsets.symmetric(
+      //               //     horizontal: customSize.setWidth(50)),
+      //               // alignment: Alignment.topCenter,
+      //               child: Text(
+      //                 "Employees",
+      //                 style: TextStyle(
+      //                     fontSize: 25,
+      //                     fontWeight: FontWeight.bold,
+      //                     color: Colors.blue),
+      //               ),
+      //             ),
+      //             SizedBox(
+      //               height: customSize.setHeight(50),
+      //             ),
+      //             SizedBox(
+      //               width: customSize.setWidth(70),
+      //               child: FilledButton(
+      //                   child: Padding(
+      //                     padding: EdgeInsets.symmetric(
+      //                         horizontal: customSize.setWidth(5),
+      //                         vertical: customSize.setHeight(10)),
+      //                     child: Row(
+      //                       // mainAxisAlignment:
+      //                       // MainAxisAlignment.spaceAround,
+      //                       children: [
+      //                         const Icon(FluentIcons.add),
+      //                         SizedBox(
+      //                           width: customSize.setWidth(5),
+      //                         ),
+      //                         const Text("add Employee"),
+      //                       ],
+      //                     ),
+      //                   ),
+      //                   onPressed: () {}),
+      //             ),
+      //             SizedBox(
+      //               height: customSize.setHeight(50),
+      //             ),
+      //             _buildEmployeesTable(customSize)
+      //           ])),
+      // ));
+      // }
+      // );
+    });
   }
 
   // Widget _buildEmployeesTable(CustomSize customSize) => StateBuilder<

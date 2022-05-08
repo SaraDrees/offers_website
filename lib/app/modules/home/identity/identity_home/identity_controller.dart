@@ -18,6 +18,34 @@ class IdentityController extends GetxStateController {
     selectedTab.value = i;
   }
 
+  List<Map<String, Object>> screens = [
+    {
+      'name': "Show Employee",
+      // "page": const ShowEmployeeView(),
+    },
+    {
+      'name': "Add Employee",
+      // "page": const AddEmployeeView(),
+    },
+    {
+      'name': "Show Users",
+      // "page": ShowUserView(
+      //   index: 0,
+      // ),
+    },
+    {
+      'name': "Users How Show Our Shop",
+      // "page": ShowUserView(
+      //   index: 1,
+      // ),
+    }
+  ];
+  int selectedScreen = 0;
+  void changeSelectedScreen(int index) {
+    selectedScreen = index;
+    update(["ScreenBuilderId"]);
+  }
+
   List<Employee> employees = [];
   bool isAddRequest = false;
 

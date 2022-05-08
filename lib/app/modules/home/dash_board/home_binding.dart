@@ -6,6 +6,8 @@ import 'package:offers_website/app/modules/home/identity/identity_home/identity_
 import 'package:offers_website/app/modules/home/offer/offer_home/home_offer_binding.dart';
 import 'package:offers_website/app/modules/home/shared/home_repository.dart';
 import 'package:offers_website/app/modules/home/shop/home_shop/home_shop_binding.dart';
+import 'package:offers_website/core/widgets/app_bar/app_bar_controller.dart';
+import 'package:offers_website/core/widgets/floating_abb_bar/floating_app_bar_controller.dart';
 
 class HomeBinding extends Bindings {
   @override
@@ -17,5 +19,7 @@ class HomeBinding extends Bindings {
     HomeShopBinding().dependencies();
     DistrictsBinding().dependencies();
     HomeOfferBinding().dependencies();
+    Get.put(AppBarController(), permanent: true);
+    Get.put(FloatingAppBarController(), permanent: true);
   }
 }

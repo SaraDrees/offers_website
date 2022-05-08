@@ -1,5 +1,6 @@
 class HomeRoutes {
   static const String homeRoute = "/homeRoute";
+  static const String homeScreenRoute = "/homeScreenRoute";
 
   static const String allProductRoute = "/allProductRoute";
   static const String addProductRoute = "/addProductRoute";

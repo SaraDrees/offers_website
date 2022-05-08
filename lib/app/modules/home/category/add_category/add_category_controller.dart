@@ -96,7 +96,7 @@ class AddCategoryController extends GetxStateController {
 
   @override
   void onInit() async {
-    getCategories();
+    // getCategories();
     super.onInit();
   }
 }

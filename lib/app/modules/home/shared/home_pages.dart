@@ -8,6 +8,10 @@ class _HomePages {
         name: HomeRoutes.homeRoute,
         page: () => const HomeView(),
         binding: HomeBinding()),
+    GetPage(
+        name: HomeRoutes.homeScreenRoute,
+        page: () => const HomeScreen(),
+        binding: HomeBinding()),
 
     GetPage(
         name: HomeRoutes.allCategoryRoute,

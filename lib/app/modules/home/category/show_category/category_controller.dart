@@ -136,7 +136,7 @@ class CategoryController extends GetxStateController {
 
   @override
   void onInit() {
-    getCategories();
+    // getCategories();
     super.onInit();
   }
 
