@@ -22,7 +22,6 @@ class NoResults extends StatelessWidget {
               child: const Text('no result'),
             ),
 
-            //Text(LocaleKeys.noResults.tr()),
           ],
         ),
       );

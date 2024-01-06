@@ -47,47 +47,7 @@ class HomeView extends GetView<HomeController> {
                                     ),
                                   ),
                                 )),
-                      ),
-                      // GetBuilder<HomeController>(
-                      //     id: "floatingAppBarId",
-                      //     builder: (context) {
-                      //       return Visibility(
-                      //         visible: false,
-                      //         child: Center(
-                      //           heightFactor: 1,
-                      //           child: Padding(
-                      //               padding: EdgeInsets.only(
-                      //                 top: customSize.screenHeight / 2 +
-                      //                     customSize.screenHeight / 10,
-                      //                 left: customSize.screenWidth / 7,
-                      //                 right: customSize.screenWidth / 7,
-                      //               ),
-                      //               child: Card(
-                      //                 child: Padding(
-                      //                   padding: EdgeInsets.symmetric(
-                      //                       horizontal:
-                      //                           customSize.screenWidth / 50,
-                      //                       vertical:
-                      //                           customSize.screenHeight / 40),
-                      //                   child: Row(
-                      //                       mainAxisAlignment:
-                      //                           MainAxisAlignment.spaceAround,
-                      //                       children: List<Widget>.generate(
-                      //                           controller
-                      //                               .floatingAppBar.length,
-                      //                           (index) => buildonHoverText(
-                      //                               customSize,
-                      //                               index,
-                      //                               controller.floatingAppBar[
-                      //                                   index]))),
-                      //                 ),
-                      //               )
-                      //               // }),
-                      //               ),
-                      //         ),
-                      //       );
-                      //     })
-                    ],
+                      )],
                   ),
                   buildDashBordHome(customSize)
                 ])));
@@ -305,7 +265,6 @@ Widget buildDashBordHome(CustomSize customSize) {
         children: [
           Row(
             mainAxisSize: MainAxisSize.min,
-            // mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               const Text(
                 'Categories',
@@ -317,18 +276,12 @@ Widget buildDashBordHome(CustomSize customSize) {
               SizedBox(
                 width: customSize.setWidth(50),
               ),
-              // Expanded(
-              //   child:
               const Text(
                 'Categories with shop number',
                 textAlign: TextAlign.start,
               ),
-              // ),
             ],
-            // )
           ),
-          //   ],
-          // ),
           StateBuilder<HomeController>(
               id: "categoryListId",
               builder: (widgetState, controller) {
@@ -358,11 +311,7 @@ Widget buildDashBordHome(CustomSize customSize) {
                                         child: ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(15.0),
-                                          child:
-                                              // Image.network(
-                                              //   controller
-                                              //       .categories[index].image,
-                                              Image.asset(
+                                          child: Image.asset(
                                             'assets/images/lock_screen.jpg',
                                             fit: BoxFit.cover,
                                           ),
@@ -386,10 +335,6 @@ Widget buildDashBordHome(CustomSize customSize) {
                                         ),
                                         child: Text(
                                           "shop number : ${controller.categories[index].shops?.length ?? 0}",
-                                          // controller.categories[index]
-                                          //         .isBranch
-                                          //     ? "bransh"
-                                          //     : "main",
                                           style: const TextStyle(
                                             color: Colors.grey,
                                             fontSize: 12,
@@ -403,10 +348,7 @@ Widget buildDashBordHome(CustomSize customSize) {
                       ),
                     ));
               }),
-          // ),
           buildFavoriteShopsRow(customSize)
-          // ,
-          // )
         ],
       ));
 }
@@ -420,7 +362,6 @@ Widget buildFavoriteShopsRow(CustomSize customSize) {
         children: [
           Row(
             mainAxisSize: MainAxisSize.min,
-            // mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               const Text(
                 'Favoraite Shops',
@@ -432,18 +373,12 @@ Widget buildFavoriteShopsRow(CustomSize customSize) {
               SizedBox(
                 width: customSize.setWidth(50),
               ),
-              // Expanded(
-              //   child:
               const Text(
                 'Favorite Shops and user number',
                 textAlign: TextAlign.start,
               ),
-              // ),
             ],
-            // )
           ),
-          //   ],
-          // ),
           StateBuilder<HomeController>(
               id: "categoryListId",
               builder: (widgetState, controller) {
@@ -474,16 +409,11 @@ Widget buildFavoriteShopsRow(CustomSize customSize) {
                                         borderRadius:
                                             BorderRadius.circular(25.0),
                                         child:
-                                            // Image.network(
-                                            //   controller
-                                            //       .categories[index].image,
                                             Image.asset(
                                           'assets/images/lock_screen.jpg',
                                           fit: BoxFit.cover,
                                         ),
                                       ),
-                                      // ),
-                                      // ),
                                       Align(
                                         alignment: Alignment.bottomRight,
                                         child: Padding(
@@ -491,11 +421,10 @@ Widget buildFavoriteShopsRow(CustomSize customSize) {
                                               top:
                                                   customSize.screenHeight / 100,
                                             ),
-                                            child: Row(
-                                              // mainAxisSize: MainAxisSize.min,
+                                            child: const Row(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.spaceEvenly,
-                                              children: const [
+                                              children: [
                                                 Icon(Icons.group),
                                                 Text("user number : 10",
                                                     style: TextStyle(
@@ -506,7 +435,6 @@ Widget buildFavoriteShopsRow(CustomSize customSize) {
                                                     )),
                                               ],
                                             )
-                                            //
                                             ),
                                       ),
                                     ])),
@@ -516,26 +444,17 @@ Widget buildFavoriteShopsRow(CustomSize customSize) {
                                   ),
                                   child: const Text(
                                     "shop name",
-                                    // controller.categories[index].name,
                                     style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w500,
                                     ),
                                   ),
                                 ),
-                              ]),
-
-                              // )
-                              //   ],
-                              // ),
-                            ),
-                            // )),
+                              ])
+                            )
                           )),
                     ));
-              }),
-          // ),
-          // ,
-          // )
+              })
         ],
       ));
 }

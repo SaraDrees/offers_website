@@ -21,23 +21,15 @@ class IdentityController extends GetxStateController {
   List<Map<String, Object>> screens = [
     {
       'name': "Show Employee",
-      // "page": const ShowEmployeeView(),
     },
     {
       'name': "Add Employee",
-      // "page": const AddEmployeeView(),
     },
     {
       'name': "Show Users",
-      // "page": ShowUserView(
-      //   index: 0,
-      // ),
     },
     {
       'name': "Users How Show Our Shop",
-      // "page": ShowUserView(
-      //   index: 1,
-      // ),
     }
   ];
   int selectedScreen = 0;
@@ -86,7 +78,6 @@ class IdentityController extends GetxStateController {
   }
 
   Future addEmployee() async {
-    // if (selectedPermission != null) {
     employee.permissions
         .addAll(permissions.where((element) => element.selected).toList());
     requestMethod(
@@ -95,14 +86,10 @@ class IdentityController extends GetxStateController {
         function: () async {
           isAddRequest = true;
           await identityRepository.addEmployee(employee);
-          // isAddRequest = false;
           resetView();
           getEmployees();
           return null;
         });
-    // } else {
-    //   log("lllll");
-    // }
   }
 
   void resetView() {
@@ -113,7 +100,6 @@ class IdentityController extends GetxStateController {
         phone: "",
         isActive: false,
         permissions: []);
-    // selectedPermission = null;
     update(["addEmployeeId", "Permissions"]);
   }
 

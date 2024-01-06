@@ -54,24 +54,6 @@ class CategoryController extends GetxStateController {
               expanded.value = true;
               update();
             });
-
-            // update(["categoryInfoId"]);
-            // categoryList.clear();
-            // final tempList = await homeRepository.getCategories();
-            // categoryList.addAll(tempList
-            //     .where((element) => element.isBranch == false)
-            //     .toList()
-            //     .reversed);
-            // for (int i = 0; i < categoryList.length; i++) {
-            //   categoryList[i].subCategories.addAll(tempList
-            //       .where((element) =>
-            //           element.isBranch == true &&
-            //           element.mainCategory!.id == categoryList[i].id)
-            //       .toList()
-            //       .reversed);
-            //   log(" ${categoryList[i].subCategories.length} /// ${categoryList[i].subCategories.isNotEmpty}");
-            // }
-            // log("categoryList length ::: ${categoryList.length}");
             return null;
           });
     }
@@ -96,7 +78,6 @@ class CategoryController extends GetxStateController {
   }
 
   void upadteSelectedCategory(Category category) {
-    // selectedCategory.value.isActive = !selectedCategory.value.isActive;
     selectedCategory.value = category;
     expanded.value = true;
     update();
@@ -136,13 +117,6 @@ class CategoryController extends GetxStateController {
 
   @override
   void onInit() {
-    // getCategories();
     super.onInit();
   }
-
-  // @override
-  // void onReady() {
-  //   getCategories();
-  //   super.onReady();
-  // }
 }

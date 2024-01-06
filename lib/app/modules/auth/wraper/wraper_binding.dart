@@ -8,6 +8,5 @@ class Wraper extends Bindings {
   void dependencies() {
     Get.put(AuthRepository(dio: Get.find<Dio>()));
     Get.put(WraperController(authRepository: Get.find()));
-    // LoginBinding().dependencies();
   }
 }

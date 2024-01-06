@@ -5,10 +5,8 @@ class DioController {
 
   static String baseUrl = "https://offers-project.herokuapp.com";
   static String api = baseUrl + "/api";
-  // final StorageService storageService;
   DioController({
     required this.dio,
-    // required this.storageService,
   });
 
   Future<String> checkToken({
@@ -19,24 +17,7 @@ class DioController {
     if (urlWithoutToken.contains(url)) {
       return '';
     } else {
-      // if (shouldRefresh
-      // ||
-      // DateTime.now().isAfter(DataHelper.employee!.expiresIn)) {
-      //     try {
-      //       final Response result = await refreshToken(
-      //         DataHelper.employee!.uid,
-      //         DataHelper.employee!.refreshToken,
-      //       );
-      //       DataHelper.employee!.accessToken = result.data['accessToken'];
-      //       DataHelper.employee!.expiresIn =
-      //           DateTime.now().add(Duration(seconds: result.data['expiresIn']));
-      //       storageService.employeeStorage.setEmployee(DataHelper.employee!);
-      //       return result.data['accessToken'];
-      //     } on DioError {
       return '';
-      //     }
-      //   } else {
-      //     return DataHelper.employee!.accessToken;
     }
   }
 

@@ -41,7 +41,6 @@ class IdentityHomeView extends GetView<IdentityController> {
                               return ShowEmployeeView(
                                 customSize: customSize,
                               );
-                            // break;
                             case 1:
                               return const AddEmployeeView();
                             case 2:

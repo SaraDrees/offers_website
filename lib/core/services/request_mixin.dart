@@ -47,7 +47,6 @@ mixin RequestMixin on StateProvider {
         if (list != null) {
           if (list.isEmpty) {
             updateState(ids, WidgetState.noResults);
-            // CustomToast.showDefault(LocaleKeys.noData.tr);
           } else {
             updateState(ids, WidgetState.loaded);
           }
@@ -62,7 +61,6 @@ mixin RequestMixin on StateProvider {
         if (list != null) {
           if (list.isEmpty) {
             updateState(ids, WidgetState.noMoreData);
-            // CustomToast.showDefault(LocaleKeys.noAdditionalData.tr);
           } else {
             updateState(ids, WidgetState.loaded);
           }

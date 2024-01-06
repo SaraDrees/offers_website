@@ -8,20 +8,5 @@ class HomeShopView extends GetView<HomeShopController> {
   @override
   Widget build(BuildContext context) {
     return const Text("data");
-    // return Obx(() => TabView(
-    //       currentIndex: controller.selectedTab.value,
-    //       onChanged: (i) => controller.updateSelectedTab(i),
-    //       tabs: const [
-    //         Tab(
-    //             text: Text("Shops"),
-    //             closeIcon: null,
-    //             icon: Icon(FluentIcons.collapse_menu)),
-    //         Tab(
-    //             text: Text("add Shops"),
-    //             closeIcon: null,
-    //             icon: Icon(FluentIcons.add_in))
-    //       ],
-    //       bodies: [const ShopsView(), const AddShopView()],
-    //     ));
   }
 }

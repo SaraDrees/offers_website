@@ -19,7 +19,6 @@ class ShowOffersView extends GetView<ShowOffersController> {
                   child: Column(
                     children: [
                       Row(
-                        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Flexible(
                             child: Column(
@@ -38,15 +37,9 @@ class ShowOffersView extends GetView<ShowOffersController> {
                                   decoration: BoxDecoration(
                                       border: Border.all(),
                                       borderRadius: BorderRadius.circular(10)),
-                                  // width: customSize.screenWidth / 6,
                                   padding: EdgeInsets.symmetric(
                                       horizontal: customSize.setWidth(2)),
-                                  child: const Text("data"),
-                                  // child: const TextBox(
-                                  //   decoration:
-                                  //       BoxDecoration(border: Border()),
-                                  //   placeholder: "offer name",
-                                  // )
+                                  child: const Text("data")
                                 ),
                               ],
                             ),
@@ -71,21 +64,6 @@ class ShowOffersView extends GetView<ShowOffersController> {
                                       border: Border.all(),
                                       borderRadius: BorderRadius.circular(10)),
                                   child: const Text("data")
-                                  // Combobox<String>(
-                                  //     isExpanded: true,
-                                  // onChanged: (i) {},
-                                  // placeholder: const Text("Select"),
-                                  // value: controller.selectedMainCategory,
-                                  // items: const [
-                                  //   ComboboxItem<String>(
-                                  //       value: "444", child: Text("data1")),
-                                  //   ComboboxItem<String>(
-                                  //       value: "444", child: Text("data1")),
-                                  //   ComboboxItem<String>(
-                                  //       value: "444", child: Text("data1")),
-                                  //   ComboboxItem<String>(
-                                  //       value: "444", child: Text("data1")),
-                                  // ]),
                                   ),
                             ],
                           )),
@@ -109,21 +87,6 @@ class ShowOffersView extends GetView<ShowOffersController> {
                                       border: Border.all(),
                                       borderRadius: BorderRadius.circular(10)),
                                   child: const Text("data")
-                                  // child: Combobox<String>(
-                                  //     isExpanded: true,
-                                  //     onChanged: (i) {},
-                                  //     placeholder: const Text("Select"),
-                                  //     value: controller.selectedMainCategory,
-                                  //     items: const [
-                                  //       ComboboxItem<String>(
-                                  //           value: "444", child: Text("data1")),
-                                  //       ComboboxItem<String>(
-                                  //           value: "444", child: Text("data1")),
-                                  //       ComboboxItem<String>(
-                                  //           value: "444", child: Text("data1")),
-                                  //       ComboboxItem<String>(
-                                  //           value: "444", child: Text("data1")),
-                                  //     ]),
                                   ),
                             ],
                           )),
@@ -146,23 +109,7 @@ class ShowOffersView extends GetView<ShowOffersController> {
                                   decoration: BoxDecoration(
                                       border: Border.all(),
                                       borderRadius: BorderRadius.circular(10)),
-                                  child: const Text("data")
-                                  // child: Combobox<String>(
-                                  //     isExpanded: true,
-                                  //     onChanged: (i) {},
-                                  //     placeholder: const Text("Select"),
-                                  //     value: controller.selectedMainCategory,
-                                  //     items: const [
-                                  //       ComboboxItem<String>(
-                                  //           value: "444", child: Text("data1")),
-                                  //       ComboboxItem<String>(
-                                  //           value: "444", child: Text("data1")),
-                                  //       ComboboxItem<String>(
-                                  //           value: "444", child: Text("data1")),
-                                  //       ComboboxItem<String>(
-                                  //           value: "444", child: Text("data1")),
-                                  //     ]),
-                                  ),
+                                  child: const Text("data")),
                             ],
                           )),
                           Flexible(
@@ -183,20 +130,12 @@ class ShowOffersView extends GetView<ShowOffersController> {
                                         border: Border.all(),
                                         borderRadius:
                                             BorderRadius.circular(10)),
-                                    // width: customSize.screenWidth / 6,
                                     padding: EdgeInsets.symmetric(
                                         horizontal: customSize.setWidth(2)),
-                                    child: const Text("data"))
-                                // child: const TextBox(
-                                //   decoration:
-                                //       BoxDecoration(border: Border()),
-                                //   placeholder: "offer code",
-                                // )),
-                              ],
+                                    child: const Text("data"))],
                             ),
                           ),
                           const Flexible(child: SizedBox()),
-                          // const Flexible(child: SizedBox()),
                         ],
                       ),
                       SizedBox(
@@ -223,23 +162,7 @@ class ShowOffersView extends GetView<ShowOffersController> {
                                   decoration: BoxDecoration(
                                       border: Border.all(),
                                       borderRadius: BorderRadius.circular(10)),
-                                  child: const Text("data")
-                                  // child: Combobox<String>(
-                                  //     isExpanded: true,
-                                  //     onChanged: (i) {},
-                                  //     placeholder: const Text("Select"),
-                                  //     value: controller.selectedMainCategory,
-                                  //     items: const [
-                                  //       ComboboxItem<String>(
-                                  //           value: "444", child: Text("data1")),
-                                  //       ComboboxItem<String>(
-                                  //           value: "444", child: Text("data1")),
-                                  //       ComboboxItem<String>(
-                                  //           value: "444", child: Text("data1")),
-                                  //       ComboboxItem<String>(
-                                  //           value: "444", child: Text("data1")),
-                                  //     ]),
-                                  ),
+                                  child: const Text("data")),
                             ],
                           )),
                           Flexible(
@@ -261,23 +184,7 @@ class ShowOffersView extends GetView<ShowOffersController> {
                                   decoration: BoxDecoration(
                                       border: Border.all(),
                                       borderRadius: BorderRadius.circular(10)),
-                                  child: const Text("data")
-                                  // child: Combobox<String>(
-                                  //     isExpanded: true,
-                                  //     onChanged: (i) {},
-                                  //     placeholder: const Text("Select"),
-                                  //     value: controller.selectedMainCategory,
-                                  //     items: const [
-                                  //       ComboboxItem<String>(
-                                  //           value: "444", child: Text("data1")),
-                                  //       ComboboxItem<String>(
-                                  //           value: "444", child: Text("data1")),
-                                  //       ComboboxItem<String>(
-                                  //           value: "444", child: Text("data1")),
-                                  //       ComboboxItem<String>(
-                                  //           value: "444", child: Text("data1")),
-                                  //     ]),
-                                  ),
+                                  child: const Text("data")),
                             ],
                           )),
                           Flexible(
@@ -299,23 +206,7 @@ class ShowOffersView extends GetView<ShowOffersController> {
                                   decoration: BoxDecoration(
                                       border: Border.all(),
                                       borderRadius: BorderRadius.circular(10)),
-                                  child: const Text("data")
-                                  // child: Combobox<String>(
-                                  //     isExpanded: true,
-                                  //     onChanged: (i) {},
-                                  //     placeholder: const Text("Select"),
-                                  //     value: controller.selectedMainCategory,
-                                  //     items: const [
-                                  //       ComboboxItem<String>(
-                                  //           value: "444", child: Text("data1")),
-                                  //       ComboboxItem<String>(
-                                  //           value: "444", child: Text("data1")),
-                                  //       ComboboxItem<String>(
-                                  //           value: "444", child: Text("data1")),
-                                  //       ComboboxItem<String>(
-                                  //           value: "444", child: Text("data1")),
-                                  //     ]),
-                                  ),
+                                  child: const Text("data")),
                             ],
                           )),
                           Flexible(
@@ -337,23 +228,7 @@ class ShowOffersView extends GetView<ShowOffersController> {
                                   decoration: BoxDecoration(
                                       border: Border.all(),
                                       borderRadius: BorderRadius.circular(10)),
-                                  child: const Text("data")
-                                  // child: Combobox<String>(
-                                  //     isExpanded: true,
-                                  //     onChanged: (i) {},
-                                  //     placeholder: const Text("Select"),
-                                  //     value: controller.selectedMainCategory,
-                                  //     items: const [
-                                  //       ComboboxItem<String>(
-                                  //           value: "444", child: Text("data1")),
-                                  //       ComboboxItem<String>(
-                                  //           value: "444", child: Text("data1")),
-                                  //       ComboboxItem<String>(
-                                  //           value: "444", child: Text("data1")),
-                                  //       ComboboxItem<String>(
-                                  //           value: "444", child: Text("data1")),
-                                  //     ]),
-                                  ),
+                                  child: const Text("data")),
                             ],
                           )),
                           const Flexible(child: SizedBox()),
@@ -383,16 +258,9 @@ class ShowOffersView extends GetView<ShowOffersController> {
                                         border: Border.all(),
                                         borderRadius:
                                             BorderRadius.circular(10)),
-                                    // width: customSize.screenWidth / 6,
                                     padding: EdgeInsets.symmetric(
                                         horizontal: customSize.setWidth(2)),
-                                    child: const Text("data"))
-                                // child: const TextBox(
-                                //   decoration:
-                                //       BoxDecoration(border: Border()),
-                                //   // placeholder: "offer name",
-                                // )),
-                              ],
+                                    child: const Text("data"))],
                             ),
                           ),
                           SizedBox(
@@ -416,15 +284,9 @@ class ShowOffersView extends GetView<ShowOffersController> {
                                         border: Border.all(),
                                         borderRadius:
                                             BorderRadius.circular(10)),
-                                    // width: customSize.screenWidth / 6,
                                     padding: EdgeInsets.symmetric(
                                         horizontal: customSize.setWidth(2)),
                                     child: const Text("data"))
-                                // child: const TextBox(
-                                //   decoration:
-                                //       BoxDecoration(border: Border()),
-                                //   // placeholder: "offer name",
-                                // )),
                               ],
                             ),
                           ),
@@ -447,32 +309,15 @@ class ShowOffersView extends GetView<ShowOffersController> {
                                   decoration: BoxDecoration(
                                       border: Border.all(),
                                       borderRadius: BorderRadius.circular(10)),
-                                  child: const Text("data")
-                                  // child: Combobox<String>(
-                                  //     isExpanded: true,
-                                  //     onChanged: (i) {},
-                                  //     placeholder: const Text("Select"),
-                                  //     value: controller.selectedMainCategory,
-                                  //     items: const [
-                                  //       ComboboxItem<String>(
-                                  //           value: "444", child: Text("data1")),
-                                  //       ComboboxItem<String>(
-                                  //           value: "444", child: Text("data1")),
-                                  //       ComboboxItem<String>(
-                                  //           value: "444", child: Text("data1")),
-                                  //       ComboboxItem<String>(
-                                  //           value: "444", child: Text("data1")),
-                                  //     ]),
-                                  ),
+                                  child: const Text("data")),
                             ],
                           )),
                           Container(
                             margin:
                                 EdgeInsets.only(top: customSize.setHeight(20)),
-                            child: Flexible(
+                            child: const Flexible(
                                 child: Row(
-                              children: const [
-                                // Checkbox(checked: true, onChanged: (i) {}),
+                              children:[
                                 Text("out of stock"),
                               ],
                             )),
@@ -488,20 +333,6 @@ class ShowOffersView extends GetView<ShowOffersController> {
                               constraints: BoxConstraints(
                                   minWidth: customSize.setWidth(30)),
                               child: const Text("data")),
-                          // child: FilledButton(
-                          //     style: ButtonStyle(
-                          //         elevation: ButtonState.all(10)),
-                          //     child: Row(
-                          //       mainAxisSize: MainAxisSize.min,
-                          //       children: [
-                          //         const Icon(FluentIcons.search),
-                          //         SizedBox(
-                          //           width: customSize.setWidth(2),
-                          //         ),
-                          //         const Text("Search"),
-                          //       ],
-                          //     ),
-                          //     onPressed: () {})),
                           SizedBox(
                             width: customSize.setWidth(10),
                           ),
@@ -509,26 +340,17 @@ class ShowOffersView extends GetView<ShowOffersController> {
                               constraints: BoxConstraints(
                                   minWidth: customSize.setWidth(30)),
                               child: OutlinedButton(
-                                  // style: ButtonStyle(
-                                  //     bordconster: ButtonState.all(
-                                  //         BorderSide(color: Colors.blue))),
-                                  //     backgroundColor:
-                                  //         ButtonState.all(Colors.white),
-                                  // elevation: ButtonState.all(10)),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       const Icon(
-                                        Icons.clear,
-                                        // FluentIcons.clear,
-                                        // color: Colors.blue,
+                                        Icons.clear
                                       ),
                                       SizedBox(
                                         width: customSize.setWidth(2),
                                       ),
                                       const Text(
                                         "Reset",
-                                        // style: TextStyle(color: Colors.blue),
                                       ),
                                     ],
                                   ),
@@ -536,7 +358,6 @@ class ShowOffersView extends GetView<ShowOffersController> {
                         ],
                       ),
                       SizedBox(height: customSize.setHeight(50)),
-                      // _buildOfferTable(customSize),
                       SizedBox(height: customSize.setHeight(50)),
                     ],
                   ),
@@ -545,389 +366,4 @@ class ShowOffersView extends GetView<ShowOffersController> {
     );
   }
 
-  // Widget _buildOfferTable(CustomSize customSize) => Padding(
-  //       padding: EdgeInsets.symmetric(horizontal: customSize.setWidth(10)),
-  //       child: Scrollbar(
-  //           controller: controller.verticalScrollController,
-  //           child: SingleChildScrollView(
-  //             controller: controller.verticalScrollController,
-  //             scrollDirection: Axis.vertical,
-  //             primary: false,
-  //             child: Scrollbar(
-  //               controller: controller.horizontalScrollController,
-  //               child: SingleChildScrollView(
-  //                 controller: controller.horizontalScrollController,
-  //                 scrollDirection: Axis.horizontal,
-  //                 primary: false,
-  //                 child: SizedBox(
-  //                   width: customSize.screenWidth + customSize.setWidth(200),
-  //                   child: Table(
-  //                     columnWidths: const {
-  //                       0: FlexColumnWidth(2),
-  //                       9: FlexColumnWidth(2)
-  //                     },
-  //                     border: TableBorder.all(color: Colors.blue, width: 2),
-  //                     children: [
-  //                       TableRow(children: [
-  //                         Padding(
-  //                             padding: EdgeInsets.symmetric(
-  //                                 vertical: customSize.setHeight(8),
-  //                                 horizontal: customSize.setWidth(2)),
-  //                             child: const Text(
-  //                               "Actions",
-  //                               style: TextStyle(color: Colors.blue),
-  //                               textAlign: TextAlign.center,
-  //                         )),
-  //                         const Padding(
-  //                           padding: EdgeInsets.all(8.0),
-  //                           child: Text(
-  //                             "Code",
-  //                             style: TextStyle(color: Colors.blue),
-  //                             textAlign: TextAlign.center,
-  //                           ),
-  //                         ),
-  //                         const Padding(
-  //                           padding: EdgeInsets.all(8.0),
-  //                           child: Text(
-  //                             "Image",
-  //                             style: TextStyle(color: Colors.blue),
-  //                             textAlign: TextAlign.center,
-  //                           ),
-  //                         ),
-  //                         Padding(
-  //                             padding: EdgeInsets.symmetric(
-  //                                 vertical: customSize.setHeight(8),
-  //                                 horconst izontal: customSize.setWidth(2)),
-  //                             child: const Text(
-  //                               "Name",
-  //                               style: TextStyle(color: Colors.blue),
-  //                               textAlign: TextAlign.center,
-  //                             )),
-  //                         Padding(
-  //                             padding: EdgeInsets.symmetric(
-  //                                 vertical: customSize.setHeight(8),
-  //                                 horconst izontal: customSize.setWidth(2)),
-  //                             child: const Text(
-  //                               "Category",
-  //                               style: TextStyle(color: Colors.blue),
-  //                               textAlign: TextAlign.center,
-  //                         )),
-  //                         const Padding(
-  //                           padding: EdgeInsets.all(8.0),
-  //                           child: Text(
-  //                             "sub category",
-  //                             style: TextStyle(color: Colors.blue),
-  //                             textAlign: TextAlign.center,
-  //                           ),
-  //                         ),
-  //                         const Padding(
-  //                           padding: EdgeInsets.all(8.0),
-  //                           child: Text(
-  //                             "shop name",
-  //                             style: TextStyle(color: Colors.blue),
-  //                             textAlign: TextAlign.center,
-  //                           ),
-  //                         ),
-  //                         const Padding(
-  //                           padding: EdgeInsets.all(8.0),
-  //                           child: Text(
-  //                             "district",
-  //                             style: TextStyle(color: Colors.blue),
-  //                             textAlign: TextAlign.center,
-  //                           ),
-  //                         ),
-  //                         const Padding(
-  //                           padding: EdgeInsets.all(8.0),
-  //                           child: Text(
-  //                             "offer type",
-  //                             style: TextStyle(color: Colors.blue),
-  //                             textAlign: TextAlign.center,
-  //                           ),
-  //                         ),
-  //                         Padding(
-  //                             padding: EdgeInsets.symmetric(
-  //                                 vertical: customSize.setHeight(8),
-  //                                 horconst izontal: customSize.setWidth(2)),
-  //                             child: const Text(
-  //                               "description",
-  //                               style: TextStyle(color: Colors.blue),
-  //                               textAlign: TextAlign.center,
-  //                             )),
-  //                         Padding(
-  //                             padding: EdgeInsets.symmetric(
-  //                                 vertical: customSize.setHeight(8),
-  //                                 horconst izontal: customSize.setWidth(2)),
-  //                             child: const Text(
-  //                               "gender",
-  //                               style: TextStyle(color: Colors.blue),
-  //                               textAlign: TextAlign.center,
-  //                             )),
-  //                         Padding(
-  //                             padding: EdgeInsets.symmetric(
-  //                                 vertical: customSize.setHeight(8),
-  //                                 horconst izontal: customSize.setWidth(2)),
-  //                             child: const Text(
-  //                               "old price",
-  //                               style: TextStyle(color: Colors.blue),
-  //                               textAlign: TextAlign.center,
-  //                             )),
-  //                         Padding(
-  //                             padding: EdgeInsets.symmetric(
-  //                                 vertical: customSize.setHeight(8),
-  //                                 horconst izontal: customSize.setWidth(2)),
-  //                             child: const Text(
-  //                               "new price",
-  //                               style: TextStyle(color: Colors.blue),
-  //                               textAlign: TextAlign.center,
-  //                             )),
-  //                         Padding(
-  //                             padding: EdgeInsets.symmetric(
-  //                                 vertical: customSize.setHeight(8),
-  //                                 horconst izontal: customSize.setWidth(2)),
-  //                             child: const Text(
-  //                               "Start date",
-  //                               style: TextStyle(color: Colors.blue),
-  //                               textAlign: TextAlign.center,
-  //                             )),
-  //                         Padding(
-  //                             padding: EdgeInsets.symmetric(
-  //                                 vertical: customSize.setHeight(8),
-  //                                 horconst izontal: customSize.setWidth(2)),
-  //                             child: const Text(
-  //                               "end date",
-  //                               style: TextStyle(color: Colors.blue),
-  //                               textAlign: TextAlign.center,
-  //                             )),
-  //                         Padding(
-  //                             padding: EdgeInsets.symmetric(
-  //                                 vertical: customSize.setHeight(8),
-  //                                 horconst izontal: customSize.setWidth(2)),
-  //                             child: const Text(
-  //                               "Remaining",
-  //                               style: TextStyle(color: Colors.blue),
-  //                               textAlign: TextAlign.center,
-  //                             )),
-  //                         Padding(
-  //                             padding: EdgeInsets.symmetric(
-  //                                 vertical: customSize.setHeight(8),
-  //                                 horconst izontal: customSize.setWidth(2)),
-  //                             child: const Text(
-  //                               "Created at",
-  //                               style: TextStyle(color: Colors.blue),
-  //                               textAlign: TextAlign.center,
-  //                             )),
-  //                         Padding(
-  //                             padding: EdgeInsets.symmetric(
-  //                                 vertical: customSize.setHeight(8),
-  //                                 horconst izontal: customSize.setWidth(2)),
-  //                             child: const Text(
-  //                               "like count",
-  //                               style: TextStyle(color: Colors.blue),
-  //                               textAlign: TextAlign.center,
-  //                             )),
-  //                       ]),
-  //                       TableRow(children: [
-  //                         TableCell(
-  //                             child: Padding(
-  //                           padding: EdgeInsets.symmetric(
-  //                               vertical: customSize.setHeight(10)),
-  //                           child: Column(
-  //                             children: [
-  //                               Row(
-  //                                 mainAxisAlignment:
-  //                                     MainAxisAlignment.spaceEvenly,
-  //                                 children: [
-  //                                   ConstrainedBox(
-  //                                       constraints: BoxConstraints(
-  //                                           minWidth: customSize.setWidth(10)),
-  //                                       child: FilledButton(
-  //                                           style: ButtonStyle(
-  //                                               backgroundColor:
-  //                                                   ButtonState.all(
-  //                                                       Colors.red)),
-  //                                           child: const Text("Delete"),
-  //                                           onPressed: () {})),
-  //                                   ConstrainedBox(
-  //                                       constraints: BoxConstraints(
-  //                                           minWidth: customSize.setWidth(10)),
-  //                                       child: FilledButton(
-  //                                           child: const Text("Edit"),
-  //                                           onPressed: () {})),
-  //                                 ],
-  //                               ),
-  //                               SizedBox(height: customSize.setHeight(10)),
-  //                               Row(
-  //                                 mainAxisAlignment:
-  //                                     MainAxisAlignment.spaceEvenly,
-  //                                 children: [
-  //                                   ConstrainedBox(
-  //                                       constraints: BoxConstraints(
-  //                                           minWidth: customSize.setWidth(10)),
-  //                                       child: FilledButton(
-  //                                           style: ButtonStyle(
-  //                                               backgroundColor:
-  //                                                   ButtonState.all(
-  //                                                       Colors.red)),
-  //                                           child: const Text("active"),
-  //                                           onPressed: () {})),
-  //                                   ConstrainedBox(
-  //                                       constraints: BoxConstraints(
-  //                                           minWidth: customSize.setWidth(10)),
-  //                                       child: FilledButton(
-  //                                           child: const Text("deActive"),
-  //                                           onPressed: () {})),
-  //                                 ],
-  //                               ),
-  //                             ],
-  //                           ),
-  //                         )),
-  //                         const TableCell(child: SizedBox()),
-  //                         const TableCell(child: SizedBox()),
-  //                         const TableCell(child: SizedBox()),
-  //                         const TableCell(child: SizedBox()),
-  //                         const TableCell(child: SizedBox()),
-  //                         const TableCell(child: SizedBox()),
-  //                         const TableCell(child: SizedBox()),
-  //                         const TableCell(child: SizedBox()),
-  //                         const TableCell(child: SizedBox()),
-  //                         const TableCell(child: SizedBox()),
-  //                         const TableCell(child: SizedBox()),
-  //                         const TableCell(child: SizedBox()),
-  //                         const TableCell(child: SizedBox()),
-  //                         const TableCell(child: SizedBox()),
-  //                         const TableCell(child: SizedBox()),
-  //                         const TableCell(child: SizedBox()),
-  //                         const TableCell(child: SizedBox()),
-  //                       ]),
-  //                       TableRow(children: [
-  //                         TableCell(
-  //                             child: Padding(
-  //                           padding: EdgeInsets.symmetric(
-  //                               vertical: customSize.setHeight(10)),
-  //                           child: Column(
-  //                             children: [
-  //                               Row(
-  //                                 mainAxisAlignment:
-  //                                     MainAxisAlignment.spaceEvenly,
-  //                                 children: [
-  //                                   ConstrainedBox(
-  //                                       constraints: BoxConstraints(
-  //                                           minWidth: customSize.setWidth(10)),
-  //                                       child: FilledButton(
-  //                                           style: ButtonStyle(
-  //                                               backgroundColor:
-  //                                                   ButtonState.all(
-  //                                                       Colors.red)),
-  //                                           child: const Text("Delete"),
-  //                                           onPressed: () {})),
-  //                                   ConstrainedBox(
-  //                                       constraints: BoxConstraints(
-  //                                           minWidth: customSize.setWidth(10)),
-  //                                       child: FilledButton(
-  //                                           child: const Text("Edit"),
-  //                                           onPressed: () {})),
-  //                                 ],
-  //                               ),
-  //                               SizedBox(height: customSize.setHeight(10)),
-  //                               Row(
-  //                                 mainAxisAlignment:
-  //                                     MainAxisAlignment.spaceEvenly,
-  //                                 children: [
-  //                                   ConstrainedBox(
-  //                                       constraints: BoxConstraints(
-  //                                           minWidth: customSize.setWidth(10)),
-  //                                       child: FilledButton(
-  //                                           style: ButtonStyle(
-  //                                               backgroundColor:
-  //                                                   ButtonState.all(
-  //                                                       Colors.red)),
-  //                                           child: const Text("active"),
-  //                                           onPressed: () {})),
-  //                                   ConstrainedBox(
-  //                                       constraints: BoxConstraints(
-  //                                           minWidth: customSize.setWidth(10)),
-  //                                       child: FilledButton(
-  //                                           child: const Text("deActive"),
-  //                                           onPressed: () {})),
-  //                                 ],
-  //                               ),
-  //                             ],
-  //                           ),
-  //                         )),
-  //                         TableCell(
-  //                             child: SizedBox(
-  //                           height: customSize.setHeight(100),
-  //                         )),
-  //                         TableCell(
-  //                             child: SizedBox(
-  //                           height: customSize.setHeight(100),
-  //                         )),
-  //                         TableCell(
-  //                             child: SizedBox(
-  //                           height: customSize.setHeight(100),
-  //                         )),
-  //                         TableCell(
-  //                             child: SizedBox(
-  //                           height: customSize.setHeight(100),
-  //                         )),
-  //                         TableCell(
-  //                             child: SizedBox(
-  //                           height: customSize.setHeight(100),
-  //                         )),
-  //                         TableCell(
-  //                             child: SizedBox(
-  //                           height: customSize.setHeight(100),
-  //                         )),
-  //                         TableCell(
-  //                             child: SizedBox(
-  //                           height: customSize.setHeight(100),
-  //                         )),
-  //                         TableCell(
-  //                             child: SizedBox(
-  //                           height: customSize.setHeight(100),
-  //                         )),
-  //                         TableCell(
-  //                             child: SizedBox(
-  //                           height: customSize.setHeight(100),
-  //                         )),
-  //                         TableCell(
-  //                             child: SizedBox(
-  //                           height: customSize.setHeight(100),
-  //                         )),
-  //                         TableCell(
-  //                             child: SizedBox(
-  //                           height: customSize.setHeight(100),
-  //                         )),
-  //                         TableCell(
-  //                             child: SizedBox(
-  //                           height: customSize.setHeight(100),
-  //                         )),
-  //                         TableCell(
-  //                             child: SizedBox(
-  //                           height: customSize.setHeight(100),
-  //                         )),
-  //                         TableCell(
-  //                             child: SizedBox(
-  //                           height: customSize.setHeight(100),
-  //                         )),
-  //                         TableCell(
-  //                             child: SizedBox(
-  //                           height: customSize.setHeight(100),
-  //                         )),
-  //                         TableCell(
-  //                             child: SizedBox(
-  //                           height: customSize.setHeight(100),
-  //                         )),
-  //                         TableCell(
-  //                             child: SizedBox(
-  //                           height: customSize.setHeight(100),
-  //                         )),
-  //                       ])
-  //                     ],
-  //                   ),
-  //                 ),
-  //               ),
-  //             ),
-  //           )),
-  //     );
-}
+ }

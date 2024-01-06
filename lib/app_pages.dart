@@ -7,7 +7,6 @@ class AppPages {
   AppPages._();
   static final List<GetPage<dynamic>> appRoutes = [
     ...AuthModule.authPages,
-    // ...OfferModule.offerPages,
     ...HomeModule.homePages,
     ...IdentityModule.identityPages
   ];

@@ -14,7 +14,6 @@ class ShowUserController extends GetxStateController {
         ids: ["stateBuilder ids"],
         requestType: RequestType.getData,
         function: () async {
-          // allUsers.addAll(await identityRepository.getAllUser());
           return null;
         });
   }

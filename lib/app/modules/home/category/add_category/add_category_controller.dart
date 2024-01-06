@@ -31,7 +31,6 @@ class AddCategoryController extends GetxStateController {
         function: () async {
           isAddRequest = true;
           await homeRepository.addCategory(category);
-          // isAddRequest = false;
           resetView();
           return null;
         });
@@ -53,38 +52,6 @@ class AddCategoryController extends GetxStateController {
     update(["parentCategoryId"]);
   }
 
-  // Future<XFile?> openImageFile(BuildContext context) async {
-  //   try {
-  //     final XTypeGroup typeGroup = XTypeGroup(
-  //       label: 'images',
-  //       extensions: <String>['jpg', 'png'],
-  //     );
-  //     final List<XFile> files = await FileSelectorPlatform.instance
-  //         .openFiles(acceptedTypeGroups: <XTypeGroup>[typeGroup]);
-  //     if (files.isEmpty) {
-  //       // Operation was canceled by the user.
-  //       return null;
-  //     }
-  //     final XFile file = files[0];
-  //     final String fileName = file.name;
-  //     final String filePath = file.path;
-  //     return file;
-  //   } catch (e) {
-  //     log("$e");
-  //   }
-  //   return null;
-
-  // await showDialog<void>(
-  //   context: context,
-  //   builder: (BuildContext context) => ImageDisplay(fileName, filePath),
-  // );
-  // }
-
-  // void saveImage(String filePath) {
-  //   imageUrl = filePath;
-  //   update(["categoryImageId"]);
-  // }
-
   void resetView() {
     name = null;
     imageUrl = null;
@@ -96,7 +63,6 @@ class AddCategoryController extends GetxStateController {
 
   @override
   void onInit() async {
-    // getCategories();
     super.onInit();
   }
 }

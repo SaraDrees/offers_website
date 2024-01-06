@@ -27,7 +27,6 @@ class FloatingAppBar extends GetView<FloatingAppBarController> {
               child: Padding(
                   padding: EdgeInsets.only(
                     top:
-                        // customSize.screenHeight / 2 +
                         customSize.screenHeight / 5,
                     left: customSize.screenWidth / 7,
                     right: customSize.screenWidth / 7,
@@ -59,7 +58,6 @@ class FloatingAppBar extends GetView<FloatingAppBarController> {
     return InkWell(
       onTap: () {
         onChange(index);
-        // controller.changeScreen(index);
       },
       onHover: (i) {
         controller.hoverEffectInfloatingBar(index, i, "floatingAppBarId");
@@ -76,10 +74,8 @@ class FloatingAppBar extends GetView<FloatingAppBarController> {
                         controller.screenIndex == index
                     ? TextStyle(
                         color: Colors.blue.shade600,
-                        // fontSize: 14,
                         fontWeight: FontWeight.bold)
                     : const TextStyle(color: Colors.black)
-                //  Colors.black,
                 ),
             // ]),
             SizedBox(height: customSize.setHeight(5)),

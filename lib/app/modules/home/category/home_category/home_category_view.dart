@@ -8,24 +8,5 @@ class CategoryHome extends GetView<HomeCategoryController> {
   @override
   Widget build(BuildContext context) {
     return const SizedBox();
-    //   Obx(() {
-    //     return TabView(
-    //         currentIndex: controller.selectedTab.value,
-    //         onChanged: (i) => controller.selectedTab.value = i,
-    //         tabs: const [
-    //           Tab(
-    //               text: Text("Categories"),
-    //               closeIcon: null,
-    //               icon: Icon(FluentIcons.collapse_menu)),
-    //           Tab(
-    //               text: Text("add Category"),
-    //               closeIcon: null,
-    //               icon: Icon(FluentIcons.add_in))
-    //         ],
-    //         bodies: const [
-    //           CategoryView(),
-    //           AddCategoryView()
-    //         ]);
-    //   });
   }
 }

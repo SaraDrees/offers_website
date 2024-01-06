@@ -8,22 +8,5 @@ class HomeOfferView extends GetView<HomeOfferController> {
   @override
   Widget build(BuildContext context) {
     return const SizedBox();
-    // return Obx(() => TabView(
-    //         currentIndex: controller.selectedTab.value,
-    //         onChanged: (i) => controller.selectedTab.value = i,
-    //         tabs: const [
-    //           Tab(
-    //               text: Text("Offers"),
-    //               closeIcon: null,
-    //               icon: Icon(FluentIcons.collapse_menu)),
-    //           Tab(
-    //               text: Text("add Offer"),
-    //               closeIcon: null,
-    //               icon: Icon(FluentIcons.add_in))
-    //         ],
-    //         bodies: const [
-    //           ShowOffersView(),
-    //           SizedBox()
-    //         ]));
   }
 }

@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:get/get.dart';
 
 import 'dio_controller.dart';
 import 'request_interceptor.dart';
@@ -20,7 +19,6 @@ class DioFactory {
       RequestInterceptor(
         dioController: DioController(
           dio: dio,
-          // storageService: Get.find<StorageService>(),
         ),
       ),
     ]);

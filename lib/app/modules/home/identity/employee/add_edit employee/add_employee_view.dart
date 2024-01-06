@@ -39,27 +39,12 @@ class AddEmployeeView extends GetView<IdentityController> {
                                     height: customSize.setHeight(5),
                                   ),
                                   Container(
-                                      // decoration: BoxDecoration(border: Border.all()),
                                       width: customSize.screenWidth / 4,
                                       padding: EdgeInsets.symmetric(
                                           horizontal: customSize.setWidth(2)),
-                                      child: const Text("data")),
-                                  // child: TextBox(
-                                  //   controller: TextEditingController(
-                                  //       text: controller.employee.username),
-                                  //   decoration: const BoxDecoration(
-                                  //       border: Border()),
-                                  //   placeholder: "user name",
-                                  //   onChanged: (i) {
-                                  //     controller.employee.username = i;
-                                  //   },
-                                  // )),
-                                ],
+                                      child: const Text("data"))],
                               ),
                             ),
-                            // SizedBox(
-                            //   width: customSize.setWidth(50),
-                            // ),
                             Flexible(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -74,31 +59,11 @@ class AddEmployeeView extends GetView<IdentityController> {
                                     height: customSize.setHeight(5),
                                   ),
                                   Container(
-                                      // decoration: BoxDecoration(border: Border.all()),
                                       width: customSize.screenWidth / 4,
                                       padding: EdgeInsets.symmetric(
                                           horizontal: customSize.setWidth(2)),
                                       child: Obx(() {
-                                        return const Text("data");
-                                        // return TextBox(
-                                        //   // obscureText:
-                                        //   //     controller.obscureText.value,
-                                        //   // suffix: Icon(
-                                        //   //     controller.obscureText.value
-                                        //   //         ? FluentIcons.red_eye
-                                        //   //         : FluentIcons.red_eye12),
-                                        //   keyboardType:
-                                        //       TextInputType.visiblePassword,
-                                        //   // controller: TextEditingController(
-                                        //   //     text: controller.employee.password),
-                                        //   decoration: const BoxDecoration(
-                                        //       border: Border()),
-                                        //   placeholder: "password",
-                                        //   onChanged: (i) {
-                                        //     controller.employee.password = i;
-                                        //   },
-                                        // );
-                                      })),
+                                        return const Text("data");})),
                                 ],
                               ),
                             ),
@@ -116,22 +81,10 @@ class AddEmployeeView extends GetView<IdentityController> {
                                     height: customSize.setHeight(5),
                                   ),
                                   Container(
-                                      // decoration: BoxDecoration(border: Border.all()),
                                       width: customSize.screenWidth / 4,
                                       padding: EdgeInsets.symmetric(
                                           horizontal: customSize.setWidth(2)),
-                                      child: const Text("data")),
-                                  // child: TextBox(
-                                  //   controller: TextEditingController(
-                                  //       text: controller.employee.fullName),
-                                  //   decoration: const BoxDecoration(
-                                  //       border: Border()),
-                                  //   placeholder: "full name",
-                                  //   onChanged: (i) {
-                                  //     controller.employee.fullName = i;
-                                  //   },
-                                  // )),
-                                ],
+                                      child: const Text("data"))],
                               ),
                             ),
                             Flexible(
@@ -148,23 +101,10 @@ class AddEmployeeView extends GetView<IdentityController> {
                                     height: customSize.setHeight(5),
                                   ),
                                   Container(
-                                      // decoration: BoxDecoration(border: Border.all()),
                                       width: customSize.screenWidth / 4,
                                       padding: EdgeInsets.symmetric(
                                           horizontal: customSize.setWidth(2)),
-                                      child: const Text("data")),
-                                  // child: TextBox(
-                                  //   keyboardType: TextInputType.number,
-                                  //   controller: TextEditingController(
-                                  //       text: controller.employee.phone),
-                                  //   decoration: const BoxDecoration(
-                                  //       border: Border()),
-                                  //   placeholder: "phone",
-                                  //   onChanged: (i) {
-                                  //     controller.employee.phone = i;
-                                  //   },
-                                  // )),
-                                ],
+                                      child: const Text("data"))],
                               ),
                             ),
                           ],
@@ -196,8 +136,6 @@ class AddEmployeeView extends GetView<IdentityController> {
                                         controller: controller
                                             .horizontalScrollController,
                                         child: ListView.builder(
-                                            // physics:
-                                            //     const NeverScrollableScrollPhysics(),
                                             controller: controller
                                                 .horizontalScrollController,
                                             scrollDirection: Axis.horizontal,
@@ -213,22 +151,7 @@ class AddEmployeeView extends GetView<IdentityController> {
                                                             .permissions[i].id,
                                                         builder: (controller) {
                                                           return const Text(
-                                                              "data");
-                                                          // // return Checkbox(
-                                                          // //     checked: controller
-                                                          // //         .permissions[
-                                                          // //             i]
-                                                          // //         .selected,
-                                                          //     onChanged: (P) {
-                                                          //       controller.selectPermission(
-                                                          //           controller
-                                                          //               .permissions[i]);
-                                                          //       // controller
-                                                          //       //     .permissions[
-                                                          //       //         i]
-                                                          //       //     .selected = v!;
-                                                          //     });
-                                                        }),
+                                                              "data");}),
                                                     SizedBox(
                                                       width: customSize
                                                           .setWidth(2),
@@ -247,48 +170,7 @@ class AddEmployeeView extends GetView<IdentityController> {
                                                     ),
                                                   ],
                                                 ))),
-                                  ),
-                                  // ConstrainedBox(
-                                  //   constraints: BoxConstraints(
-                                  //       minWidth: customSize.screenWidth / 4,
-                                  //       maxWidth: customSize.screenWidth / 4),
-                                  //   child: widgetState == WidgetState.loading &&
-                                  //           // true
-                                  //           !controller.isAddRequest
-                                  //       ? const Loading()
-                                  //       : GetBuilder<IdentityController>(
-                                  //           id: "permissionsId",
-                                  //           init: controller,
-                                  //           builder: (controller) {
-                                  //             return Combobox<Permission>(
-                                  //                 isExpanded: true,
-                                  //                 onChanged: (i) {
-                                  //                   controller
-                                  //                       .editSelectedPermission(
-                                  //                           i!);
-                                  //                 },
-                                  //                 placeholder:
-                                  //                     const Text("Select"),
-                                  //                 value: controller
-                                  //                     .selectedPermission,
-                                  //                 items: List<
-                                  //                         ComboboxItem<
-                                  //                             Permission>>.generate(
-                                  //                     controller
-                                  //                         .permissions.length,
-                                  //                     (index) => ComboboxItem(
-                                  //                           child: Text(
-                                  //                               controller
-                                  //                                   .permissions[
-                                  //                                       index]
-                                  //                                   .name),
-                                  //                           value: controller
-                                  //                                   .permissions[
-                                  //                               index],
-                                  //                         )));
-                                  //           }),
-                                  // ),
-                                ],
+                                  )],
                               ),
                             ),
                           ],
@@ -303,23 +185,9 @@ class AddEmployeeView extends GetView<IdentityController> {
                                     controller.isAddRequest
                                 ? const Loading()
                                 : const Text("data"),
-                            // : FilledButton(
-                            //     child: SizedBox(
-                            //         width: customSize.setWidth(50),
-                            //         child: const Text("Create")),
-                            //     onPressed: () {
-                            //       controller.addEmployee();
-                            //     }),
                             SizedBox(
                               width: customSize.setWidth(10),
                             ),
-                            // FilledButton(
-                            //     child: SizedBox(
-                            //         width: customSize.setWidth(50),
-                            //         child: const Text("Reset")),
-                            //     onPressed: () {
-                            //       controller.resetView();
-                            //     }),
                           ],
                         )
                       ]);

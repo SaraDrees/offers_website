@@ -9,7 +9,5 @@ class HomeCategoryBinding extends Bindings {
     Get.lazyPut(() => HomeCategoryController());
     Get.lazyPut(() => CategoryController(homeRepository: Get.find()));
     Get.lazyPut(() => AddCategoryController(homeRepository: Get.find()));
-    // CategoryBinding().dependencies();
-    // AddCategoryBinding().dependencies();
   }
 }

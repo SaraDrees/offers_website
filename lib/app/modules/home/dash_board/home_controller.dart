@@ -15,7 +15,6 @@ class HomeController extends GetxStateController {
   HomeController({required this.homeRepository});
 
   var selectedIndex = 0.obs;
-  // final scrollController = ScrollController();
   final ScrollController horizontalScrollController = ScrollController();
   final ScrollController verticalScrollController = ScrollController();
 
@@ -51,12 +50,6 @@ class HomeController extends GetxStateController {
     super.onInit();
   }
 
-  // @override
-  // void onReady() {
-  //   getCategories();
-  //   super.onReady();
-  // }
-
   final List isHovering = [
     false,
     false,
@@ -72,13 +65,7 @@ class HomeController extends GetxStateController {
   final List floatingBarisHovering = [
     false,
     false,
-    false,
-    // false,
-    // false,
-    // false,
-    // false,
-    // false,
-    // false
+    false
   ];
 
   final List imageUrl = [
@@ -110,7 +97,6 @@ class HomeController extends GetxStateController {
         {
           floatingAppBar.clear();
           screens.clear();
-          // screens.add(const HomeScreen());
           screenIndex = 0;
           update(["floatingAppBarId", "currentScreenId"]);
           break;
@@ -122,14 +108,6 @@ class HomeController extends GetxStateController {
               ["Employee", "Add Employee" "Users", "Users how show our Shop"]);
           floatingBarisHovering.addAll([false, false, false, false]);
           screens.clear();
-          // screens.addAll([
-          //   const ShowEmployeeView(),
-          //   const AddEmployeeView(),
-          //   ShowUserView(index: 0),
-          //   ShowUserView(
-          //     index: 1,
-          //   )
-          // ]);
           screenIndex = 0;
           update(["floatingAppBarId", "currentScreenId"]);
           break;
@@ -140,10 +118,6 @@ class HomeController extends GetxStateController {
           floatingAppBar.addAll(["add Districts", "All Districts"]);
           floatingBarisHovering.addAll([false, false]);
           screens.clear();
-          // screens.addAll([
-          //   // const ShowEmployeeView(),
-          //   const AddEmployeeView(),
-          // ]);
           screenIndex = 0;
           update(["floatingAppBarId", "currentScreenId"]);
           break;
@@ -156,11 +130,7 @@ class HomeController extends GetxStateController {
           screens.clear();
           screens.addAll([
             const CategoryView(),
-            const AddCategoryView(),
-            // ShowUserView(index: 0),
-            // ShowUserView(
-            //   index: 1,
-            // )
+            const AddCategoryView()
           ]);
           screenIndex = 0;
           update(["floatingAppBarId", "currentScreenId"]);

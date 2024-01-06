@@ -39,7 +39,6 @@ class CustomAppBar extends GetView<AppBarController>
                             Get.currentRoute == HomeRoutes.homeRoute
                                 ? null
                                 : Get.offAndToNamed(HomeRoutes.homeRoute);
-                            // controller.generateFloatingAppBar(0);
                           },
                           onHover: (i) {
                             controller.showOnHoverSelectEffect(
@@ -62,7 +61,6 @@ class CustomAppBar extends GetView<AppBarController>
                                   ? null
                                   : Get.offAndToNamed(
                                       IdentityModule.homeInitialRoute);
-                              // controller.generateFloatingAppBar(1);
                             },
                             onHover: (i) {
                               controller.showOnHoverSelectEffect(
@@ -79,7 +77,6 @@ class CustomAppBar extends GetView<AppBarController>
                         SizedBox(width: customSize.screenWidth / 30),
                         InkWell(
                             onTap: () {
-                              // controller.generateFloatingAppBar(2);
                             },
                             onHover: (i) {
                               controller.showOnHoverSelectEffect(
@@ -96,7 +93,6 @@ class CustomAppBar extends GetView<AppBarController>
                         SizedBox(width: customSize.screenWidth / 30),
                         InkWell(
                             onTap: () {
-                              // controller.generateFloatingAppBar(3);
                             },
                             onHover: (i) {
                               controller.showOnHoverSelectEffect(
@@ -113,7 +109,6 @@ class CustomAppBar extends GetView<AppBarController>
                         SizedBox(width: customSize.screenWidth / 30),
                         InkWell(
                             onTap: () {
-                              // controller.generateFloatingAppBar(4);
                             },
                             onHover: (i) {
                               controller.showOnHoverSelectEffect(
@@ -130,7 +125,6 @@ class CustomAppBar extends GetView<AppBarController>
                         SizedBox(width: customSize.screenWidth / 30),
                         InkWell(
                             onTap: () {
-                              // controller.generateFloatingAppBar(5);
                             },
                             onHover: (i) {
                               controller.showOnHoverSelectEffect(
@@ -147,7 +141,6 @@ class CustomAppBar extends GetView<AppBarController>
                         SizedBox(width: customSize.screenWidth / 30),
                         InkWell(
                             onTap: () {
-                              // controller.generateFloatingAppBar(6);
                             },
                             onHover: (i) {
                               controller.showOnHoverSelectEffect(
@@ -164,7 +157,6 @@ class CustomAppBar extends GetView<AppBarController>
                         SizedBox(width: customSize.screenWidth / 30),
                         InkWell(
                             onTap: () {
-                              // controller.generateFloatingAppBar(7);
                             },
                             onHover: (i) {
                               controller.showOnHoverSelectEffect(
@@ -181,7 +173,6 @@ class CustomAppBar extends GetView<AppBarController>
                         SizedBox(width: customSize.screenWidth / 30),
                         InkWell(
                             onTap: () {
-                              // controller.generateFloatingAppBar(8);
                             },
                             onHover: (i) {
                               controller.showOnHoverSelectEffect(

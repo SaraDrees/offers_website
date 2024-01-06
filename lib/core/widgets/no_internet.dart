@@ -18,7 +18,6 @@ class NoInternetConnection extends StatelessWidget {
             image: AssetImage("assets/images/internet.png"),
           ),
         ),
-        //Text(LocaleKeys.checkInternet.tr()),
         const SizedBox(height: 20),
         ElevatedButton(
           onPressed: () => onRetryFunction!(),

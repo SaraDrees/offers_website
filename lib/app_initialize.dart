@@ -7,7 +7,4 @@ Future _preInitializations() async {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
-  // setWindowsSize();
-  // final StorageService storageService = StorageService.instance;
-  // await storageService.openDatabaseStore();
 }

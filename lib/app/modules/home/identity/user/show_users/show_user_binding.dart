@@ -4,7 +4,6 @@ import 'package:offers_website/app/modules/home/identity/user/show_users/show_us
 class ShowUserBinding extends Bindings {
   @override
   void dependencies() {
-    // Get.put(IdentityRepository(dio:Get.find()));
     Get.lazyPut(() => ShowUserController(identityRepository: Get.find()));
   }
 }

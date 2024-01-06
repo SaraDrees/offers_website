@@ -47,9 +47,5 @@ class _HomePages {
         name: HomeRoutes.districtsRoute,
         page: () => const DistrictsView(),
         binding: DistrictsBinding())
-
-    // GetPage(name: OfferRoutes.homeRoute,
-    //  page: ()=> const HomeView(),
-    //  binding: HomeBinding())
   ];
 }

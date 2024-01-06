@@ -9,9 +9,5 @@ class _AuthPages {
       page: () => const LoginView(),
       binding: LoginBinding(),
     ),
-    GetPage(
-        name: AuthRoutes.registerRoute,
-        page: () => const RegisterView(),
-        binding: RegisterBinding())
   ];
 }
